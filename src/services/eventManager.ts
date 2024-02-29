@@ -2,9 +2,9 @@ import { Participant } from "../models/participant";
 import { Hiphop, Rock } from "../models/category";
 import { ParticipantManager } from "./participantManagement";
 
-class EventManager{
+export class EventManager{
 
-    private events: Map<number, ParticipantManager> = new Map;
+    private events: Map<number, ParticipantManager> = new Map();
     private participants = new ParticipantManager;
     private date: Date | string;
 
@@ -16,8 +16,8 @@ class EventManager{
         this.participants.addParticipant(participant);
     }
 
-    removeParticipant(participantId: number): void{
-        this.participants.removeParticipant(participantId);
+    removeParticipant(participant: Participant): void{
+        this.participants.removeParticipant(participant.id);
     }
 
     listParticipants(): Participant[] {

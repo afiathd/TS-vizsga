@@ -1,5 +1,5 @@
 import { Participant } from "../models/participant";
-import { Hiphop, Rock } from "../models/category";
+import { Category, Hiphop, Rock } from "../models/category";
 
 export class ParticipantManager{
 
@@ -17,4 +17,8 @@ export class ParticipantManager{
         return Array.from(this.participants.values());
     }
 
+   /*  listByCategory(category : Category): Participant[] {
+        return Array.from(this.participants.values()).filter(participant => participant.category.includes(category));
+    } */
+    
 }
